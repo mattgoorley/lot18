@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class='control-bar'>
+    <div class='group'>
+      <button id="allOrders" class="btn" type="button">All Orders</button>
+    </div>
+  </div>
+
+<div id="Container">
+    <article class={{data.id}}>
+        <h3>{{data.id}}</h3>
+        <p>name: {{data.name}}</p>
+        <p>state: {{data.state}}</p>
+        <p>zipcode: {{data.zipcode}}</p>
+        <p>birthday: {{data.birthday}}</p>
+        <p>valid: {{data.valid}}</p>
+        <p>errors: {{data.errors}}</p>
+    </article>
+</div>
+
+{% endblock %}
+
+{% block script %}
+<script src="{{url_for('static', filename='main.js')}}"></script>
+{% endblock %}

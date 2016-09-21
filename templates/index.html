@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div id="wrapper">
+
+      <main>
+        <div id="content">
+          <div class="innertube">
+            <h1>Welcome to Lot18</h1>
+          </div>
+        </div>
+      </main>
+
+      <nav id="nav">
+        <div class="innertube">
+          <h3>What do you want to do?</h3>
+          <ul>
+            <li><a href="{{ url_for('importcsv') }}">Import a CSV</a></li>
+            <li><a href="{{ url_for('all_orders') }}">View All Orders</a></li>
+            <li> Search by order ID:
+              <input type='text' id='orderIdFilter' />
+
+              <button id='btnFilter'>Go</button>
+            </li>
+          </ul>
+
+        </div>
+      </nav>
+
+</div>
+{% endblock %}
+
+{% block script %}
+<script src="{{url_for('static', filename='main.js')}}"></script>
+{% endblock %}

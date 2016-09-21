@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <div class='control-bar'>
+    <div class='group'><label>Filter</label>
+      <button id="valid" class="btn" type="button">Valid Orders</button>
+      <button id="invalid" class="btn" type="button">Invalid Orders</button>
+      <button id="allOrders" class="btn" type="button">All Orders</button>
+    </div>
+  </div>
+
+<div>
+    <div id="Container">
+
+      {% for d in data %}
+
+        <article class={{d.id}}>
+            <a href="{{ url_for('see_order_id', order_id=d.id) }}"><h3 class='id'>{{d.id}}</h3></a>
+            <p class="name">name: {{d.name}}</p>
+            <p class="validator">valid: {{d.valid}}</p>
+        </article>
+
+      {% endfor %}
+    </div>
+
+</div>
+
+
+
+{% endblock %}
+
+{% block script %}
+<script src="{{url_for('static', filename='main.js')}}"></script>
+{% endblock %}
